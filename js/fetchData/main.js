@@ -4,7 +4,7 @@ export async function getSupplierNames(){
     return result;
 }
 
-export async function getCompanyNames(){
+export async function getCompanyDetails(){
     const response = await fetch("http://localhost:3000/company-sections");
     const result = await response.json();
     return result;

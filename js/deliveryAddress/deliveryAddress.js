@@ -1,35 +1,48 @@
-// import getSupplierNames from "./";
+import { getCompanyDetails } from "../fetchData/main.js";
 
 const DOM = {
-    companyName: document.getElementById("companyName"),
-    shippingAddress: document.getElementById("shippingAddress"),
-    shippingMerchendiser: document.getElementById("shippingMerchendiser"),
-    shippingContact: document.getElementById("shippingContact"),
+  companyName: document.getElementById("companyName"),
+  shippingAddress: document.getElementById("shippingAddress"),
+  shippingMerchendiser: document.getElementById("shippingMerchendiser"),
+  shippingContact: document.getElementById("shippingContact"),
 };
 
-const supplierNames = await getSupplierNames();
-
-function searchSupplierById(id) {
-    return supplierNames.filter((supplier) => {
-        return supplier.id === id;
-    });
+const companyDetails = await getCompanyDetails();
+console.log(companyDetails)
+function searchCompanyById(id) {
+  return companyDetails.filter((company) => {
+    return company.id === id;
+  });
 }
 
-const addOptionTOSupplierName = () => {
-    const element = DOM.supplierName;
-    supplierNames.forEach((supplier) => {
-        const option = document.createElement("option");
-        option.value = supplier.id;
-        option.textContent = supplier.name;
-        DOM.supplierName.appendChild(option);
-    });
+const addOptionToCompanyName = () => {
+  const element = DOM.companyName;
+  companyDetails.forEach((company) => {
+    const option = document.createElement("option");
+    option.value = company.id;
+    option.textContent = company.name;
+    DOM.companyName.appendChild(option);
+  });
 };
-addOptionTOSupplierName();
 
-DOM.supplierName.addEventListener("input", (e) => {
-    const supplierValue = e.target.value;
-    const data = searchSupplierById(supplierValue)[0];
-    DOM.supplierAddress.value = data.address;
-    DOM.supplierMerchendiser.value = data.merchandiser;
-    DOM.supplierContact.value = data.contact;
+addOptionToCompanyName();
+// const addOptionToCompanyShippingAddress = () => {
+//   const element = DOM.supplierName;
+//   supplierNames.forEach((supplier) => {
+//     const option = document.createElement("option");
+//     option.value = supplier.id;
+//     option.textContent = supplier.name;
+//     DOM.supplierName.appendChild(option);
+//   });
+// };
+
+// addOptionToCompanyShippingAddress();
+
+DOM.companyName.addEventListener("input", (e) => {
+  const companyIdValue = e.target.value;
+  const data = searchCompanyById(companyIdValue)[0];
+  console.log(data)
+  DOM.shippingAddress.value = data.address;
+  DOM.shippingMerchendiser.value = data.merchandiser;
+  DOM.shippingContact.value = data.contact;
 });

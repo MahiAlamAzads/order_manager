@@ -38,7 +38,7 @@
     ],
      "company-sections": [
         {
-            "company": "w-apparels",
+            "name": "w-apparels",
             "shippingAddress": [
                 "Unit-1/Rayer Bazar, Dhaka", 
                 "Rayer Bazar Unit 3",
@@ -56,7 +56,7 @@
             ]
         },
         {
-            "company": "3NA",
+            "name": "3NA",
             "shippingAddress": [
                 "Unit-10/Rayer Bazar, Dhaka",
                 "Mirpur Sector 11, Block-C, Dhaka"
@@ -73,7 +73,7 @@
             ]
         },
         {
-            "company": "Quality Apparels",
+            "name": "Quality Apparels",
             "shippingAddress": [
                 "Narayanganj, Dhaka",
                 "BSCIC Industrial Estate, Konabari, Gazipur"
