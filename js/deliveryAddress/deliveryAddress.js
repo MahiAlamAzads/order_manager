@@ -1,10 +1,10 @@
-import getSupplierNames from "./supplierHelper.js";
+// import getSupplierNames from "./";
 
 const DOM = {
-    supplierName: document.getElementById("supplierName"),
-    supplierAddress: document.getElementById("supplierAddress"),
-    supplierMerchendiser: document.getElementById("supplierMerchendiser"),
-    supplierContact: document.getElementById("supplierContact"),
+    companyName: document.getElementById("companyName"),
+    shippingAddress: document.getElementById("shippingAddress"),
+    shippingMerchendiser: document.getElementById("shippingMerchendiser"),
+    shippingContact: document.getElementById("shippingContact"),
 };
 
 const supplierNames = await getSupplierNames();
