@@ -20,6 +20,14 @@ function searchShippingByCompanyId(id) {
   })[0];
 }
 
+function searchMerchByShippingAddressId(id) {
+  searchShippingByCompanyId();
+  return companyDetails.filter((company) => {
+    return company.id === id;
+  })[0];
+}
+console.log(searchMerchByShippingAddressId("3NA-ADDR-001"));
+
 const addOptionToCompanyName = () => {
   const element = DOM.companyName;
   companyDetails.forEach((company) => {
@@ -37,19 +45,18 @@ const addOptionToCompanyShippingAddress = (idToFindShippingAddress) => {
     idToFindShippingAddress,
   ).shippingDetails;
   element.innerHTML = `<option value="" selected disabled hidden>Select Option</option>`;
-  shippingAddresses.forEach((shippingCAddress) => {
+  shippingAddresses.forEach((shippingAddress) => {
     const option = document.createElement("option");
-    option.value = shippingCAddress.id;
-    option.textContent = shippingCAddress.address;
+    option.value = shippingAddress.id;
+    option.textContent = shippingAddress.address;
     element.appendChild(option);
   });
 };
 
-const addOptionToMerchandier = (idToFindShippingAddress) => {
-  const element = DOM.shippingAddress;
-  const shippingAddresses = searchMerchByShippingAddressId(
-    idToFindShippingAddress,
-  ).shippingDetails;
+const addOptionToMerchandiser = (idToFindMerch) => {
+  const element = DOM.shippingMerchendiser;
+  const shippingAddresses =
+    searchMerchByShippingAddressId(idToFindMerch).shippingDetails;
   element.innerHTML = `<option value="" selected disabled hidden>Select Option</option>`;
   shippingAddresses.forEach((shippingCAddress) => {
     const option = document.createElement("option");
@@ -65,6 +72,8 @@ DOM.companyName.addEventListener("input", (e) => {
   addOptionToCompanyShippingAddress(companyIdValue);
 });
 
-DOM.shippingAddress.addEventListener("input", (e)=>{
-
+DOM.shippingAddress.addEventListener("input", (e) => {
+  const shippingAddressValue = e.target.value;
+   DOM.shippingMerchendiser.innerHTML = "";
+  addOptionToMerchandiser(shippingAddressValue);
 });
