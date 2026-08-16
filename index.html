@@ -3,78 +3,106 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Supplier & Delivery Details</title>
   </head>
+
   <body>
-    <div style="display: grid; grid-template-columns: 1fr 1fr">
-      <div>
-        <form action="" method="post">
+    <form action="" method="post">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px">
+        <!-- Supplier Details -->
+        <div>
           <h3>Supplier Details</h3>
+
           <div>
             <div>
               <label for="supplierName">Supplier Name</label>
-              <select name="supplierName" id="supplierName">
-                <option value="" selected disabled>Select Option</option>
+              <select name="supplierName" id="supplierName" required>
+                <option value="" selected disabled hidden>Select Option</option>
               </select>
             </div>
+
             <div>
               <label for="supplierAddress">Supplier Address</label>
-              <input type="text" id="supplierAddress" name="supplierAddress" />
+              <input
+                type="text"
+                id="supplierAddress"
+                name="supplierAddress"
+                required
+              />
             </div>
+
             <div>
-              <label for="supplierMerchendiser">Supplier Merchandiser</label>
+              <label for="supplierMerchendiser">Supplier Merchendiser</label>
               <input
                 type="text"
                 id="supplierMerchendiser"
                 name="supplierMerchendiser"
+                required
               />
             </div>
+
             <div>
               <label for="supplierContact">Supplier Contact</label>
-              <input type="text" id="supplierContact" name="supplierContact" />
+              <input
+                type="tel"
+                id="supplierContact"
+                name="supplierContact"
+                required
+              />
             </div>
           </div>
-        </form>
-      </div>
-      <div>
-        <form action="" method="post">
+        </div>
+
+        <!-- Delivery Details -->
+        <div>
           <h3>Delivery Details</h3>
+
           <div>
             <div>
               <label for="companyName">Company Name</label>
-              <select name="companyName" id="companyName">
-                <option value="" selected disabled>Select Option</option>
+              <select name="companyName" id="companyName" required>
+                <option value="" selected disabled hidden>Select Option</option>
               </select>
             </div>
+
             <div>
               <label for="shippingAddress">Shipping Address</label>
-              <select type="text" id="shippingAddress" name="shippingAddress">
-                <option value="" selected disabled>Select Option</option>
+              <select id="shippingAddress" name="shippingAddress" required>
+                <option value="" selected disabled hidden>Select Option</option>
               </select>
             </div>
+
             <div>
               <label for="shippingMerchendiser">Merchandiser Name</label>
               <select
-                type="text"
                 id="shippingMerchendiser"
                 name="shippingMerchendiser"
+                required
               >
-                <option value="" selected disabled>Select Option</option>
+                <option value="" selected disabled hidden>Select Option</option>
               </select>
             </div>
+
             <div>
               <label for="shippingContact">Contact</label>
-              <input type="text" id="shippingContact" name="shippingContact" />
+              <input
+                type="tel"
+                id="shippingContact"
+                name="shippingContact"
+                required
+              />
             </div>
           </div>
-        </form>
+        </div>
       </div>
-    </div>
+      <button type="submit">Submit</button>
+    </form>
 
     <script
       type="module"
       src="./js/supplierAddress/supplierAddress.js"
     ></script>
+
     <script
       type="module"
       src="./js/deliveryAddress/deliveryAddress.js"

@@ -1,93 +1,150 @@
 {
-    "suppliers": [
+  "suppliers": [
+    {
+      "id": 1,
+      "name": "It Tech",
+      "address": "Pirganj, Dhaka",
+      "merchandiser": "Abdur",
+      "contact": "01712345678"
+    },
+    {
+      "id": 2,
+      "name": "Rangpur Express",
+      "address": "Tukuria, Rangpur",
+      "merchandiser": "Gojo",
+      "contact": "01823456789"
+    },
+    {
+      "id": 3,
+      "name": "GopiNath-pur",
+      "address": "Dhaka, Chattogram",
+      "merchandiser": "Kakashi",
+      "contact": "01934567890"
+    },
+    {
+      "id": 4,
+      "name": "Fabragas",
+      "address": "Rayer Bazar, Dhaka",
+      "merchandiser": "Md. Goku",
+      "contact": "01645678901"
+    },
+    {
+      "id": 5,
+      "name": "Rayer Bazar Fabrica",
+      "address": "Narail",
+      "merchandiser": "Namikaze Minato",
+      "contact": "01556789012"
+    }
+  ],
+  "company-sections": [
+    {
+      "name": "w-apparels",
+      "shippingDetails": [
         {
-            "id": 1,
-            "name": "It Tech",
-            "address": "Pirganj, Dhaka",
-            "merchandiser": "Abdur",
-            "contact": "01712345678"
+          "address": "Unit-1/Rayer Bazar, Dhaka",
+          "merchandiser": [
+            {
+              "name": "ratul",
+              "contact": "01799668506"
+            },
+            {
+              "name": "tanvir",
+              "contact": "01688112233"
+            }
+          ]
         },
         {
-            "id": 2,
-            "name": "Rangpur Express",
-            "address": "Tukuria, Rangpur",
-            "merchandiser": "Gojo",
-            "contact": "01823456789"
+          "address": "Rayer Bazar Unit 3",
+          "merchandiser": [
+            {
+              "name": "ratul",
+              "contact": "01799668506"
+            },
+            {
+              "name": "tanvir",
+              "contact": "01688112233"
+            }
+          ]
         },
         {
-            "id": 3,
-            "name": "GopiNath-pur",
-            "address": "Dhaka, Chattogram",
-            "merchandiser": "Kakashi",
-            "contact": "01934567890"
-        },
-        {
-            "id": 4,
-            "name": "Fabragas",
-            "address": "Rayer Bazar, Dhaka",
-            "merchandiser": "Md. Goku",
-            "contact": "01645678901"
-        },
-        {
-            "id": 5,
-            "name": "Rayer Bazar Fabrica",
-            "address": "Narail",
-            "merchandiser": "Namikaze Minato",
-            "contact": "01556789012"
+          "address": "Plot-45, Tejgaon Industrial Area, Dhaka",
+          "merchandiser": [
+            {
+              "name": "ratul",
+              "contact": "01799668506"
+            },
+            {
+              "name": "tanvir",
+              "contact": "01688112233"
+            }
+          ]
         }
-    ],
-     "company-sections": [
+      ],
+      "id": "TGmS22HtAno"
+    },
+    {
+      "name": "3NA",
+      "shippingDetails": [
         {
-            "name": "w-apparels",
-            "shippingAddress": [
-                "Unit-1/Rayer Bazar, Dhaka", 
-                "Rayer Bazar Unit 3",
-                "Plot-45, Tejgaon Industrial Area, Dhaka"
-            ],
-            "merchandiser": [
-                {
-                    "name": "ratul", 
-                    "contact": "01799668506"
-                },
-                {
-                    "name": "tanvir",
-                    "contact": "01688112233"
-                }
-            ]
+          "address": "Unit-10/Rayer Bazar, Dhaka",
+          "merchandiser": [
+            {
+              "name": "fahim",
+              "contact": "01822334455"
+            },
+            {
+              "name": "arif",
+              "contact": "01555667788"
+            }
+          ]
         },
         {
-            "name": "3NA",
-            "shippingAddress": [
-                "Unit-10/Rayer Bazar, Dhaka",
-                "Mirpur Sector 11, Block-C, Dhaka"
-            ],
-            "merchandiser": [
-                {
-                    "name": "fahim",
-                    "contact": "01822334455"
-                },
-                {
-                    "name": "arif",
-                    "contact": "01555667788"
-                }
-            ]
-        },
-        {
-            "name": "Quality Apparels",
-            "shippingAddress": [
-                "Narayanganj, Dhaka",
-                "BSCIC Industrial Estate, Konabari, Gazipur"
-            ],
-            "merchandiser": [
-                {
-                    "name": "sultana",
-                    "contact": "01911223344"
-                },
-                {
-                    "name": "kamal",
-                    "contact": "01300445566"
-                }
-            ]
+          "address": "Mirpur Sector 11, Block-C, Dhaka",
+          "merchandiser": [
+            {
+              "name": "fahim",
+              "contact": "01822334455"
+            },
+            {
+              "name": "arif",
+              "contact": "01555667788"
+            }
+          ]
         }
-    ]
+      ],
+      "id": "2Aunk1GpHsU"
+    },
+    {
+      "name": "Quality Apparels",
+      "shippingDetails": [
+        {
+          "address": "Narayanganj, Dhaka",
+          "merchandiser": [
+            {
+              "name": "sultana",
+              "contact": "01911223344"
+            },
+            {
+              "name": "kamal",
+              "contact": "01300445566"
+            }
+          ]
+        },
+        {
+          "address": "BSCIC Industrial Estate, Konabari, Gazipur",
+          "merchandiser": [
+            {
+              "name": "sultana",
+              "contact": "01911223344"
+            },
+            {
+              "name": "kamal",
+              "contact": "01300445566"
+            }
+          ]
+        }
+      ],
+      "id": "8brIZ15rmLE"
+    }
+  ]
 }

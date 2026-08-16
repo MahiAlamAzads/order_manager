@@ -8,7 +8,7 @@ const DOM = {
 };
 
 const companyDetails = await getCompanyDetails();
-console.log(companyDetails)
+console.log(companyDetails);
 function searchCompanyById(id) {
   return companyDetails.filter((company) => {
     return company.id === id;
@@ -21,27 +21,28 @@ const addOptionToCompanyName = () => {
     const option = document.createElement("option");
     option.value = company.id;
     option.textContent = company.name;
-    DOM.companyName.appendChild(option);
+    element.appendChild(option);
   });
 };
 
 addOptionToCompanyName();
-// const addOptionToCompanyShippingAddress = () => {
-//   const element = DOM.supplierName;
-//   supplierNames.forEach((supplier) => {
-//     const option = document.createElement("option");
-//     option.value = supplier.id;
-//     option.textContent = supplier.name;
-//     DOM.supplierName.appendChild(option);
-//   });
-// };
+
+const addOptionToCompanyShippingAddress = () => {
+  const element = DOM.shippingAddress;
+  companyDetails.shippingAddress.forEach((address) => {
+    const option = document.createElement("option");
+    option.value = address;
+    option.textContent = company.name;
+    element.appendChild(option);
+  });
+};
 
 // addOptionToCompanyShippingAddress();
 
 DOM.companyName.addEventListener("input", (e) => {
   const companyIdValue = e.target.value;
   const data = searchCompanyById(companyIdValue)[0];
-  console.log(data)
+  console.log(data);
   DOM.shippingAddress.value = data.address;
   DOM.shippingMerchendiser.value = data.merchandiser;
   DOM.shippingContact.value = data.contact;
