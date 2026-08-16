@@ -21,7 +21,6 @@ function searchShippingByCompanyId(id) {
 }
 
 function searchMerchByShippingAddressId(id) {
-  searchShippingByCompanyId();
   return companyDetails.filter((company) => {
     return company.id === id;
   })[0];
@@ -53,15 +52,21 @@ const addOptionToCompanyShippingAddress = (idToFindShippingAddress) => {
   });
 };
 
-const addOptionToMerchandiser = (idToFindMerch) => {
+const addOptionToMerchandiser = (idToFindAddresses, idToFindMerch) => {
   const element = DOM.shippingMerchendiser;
-  const shippingAddresses =
-    searchMerchByShippingAddressId(idToFindMerch).shippingDetails;
+  const addresses =
+    searchShippingByCompanyId(idToFindAddresses).shippingDetails;
+  console.log("addOptionToMerchandiser:", addresses[0].merchandiser);
+  console.log("idToFindMerch", idToFindMerch);
+  const merchandisers = addresses.filter(
+    (address) => address.id === idToFindMerch,
+  )[0].merchandiser;
+
   element.innerHTML = `<option value="" selected disabled hidden>Select Option</option>`;
-  shippingAddresses.forEach((shippingCAddress) => {
+  merchandisers.forEach((merchandiser) => {
     const option = document.createElement("option");
-    option.value = shippingCAddress.id;
-    option.textContent = shippingCAddress.address;
+    option.value = merchandiser.id;
+    option.textContent = merchandiser.name;
     element.appendChild(option);
   });
 };
@@ -72,8 +77,10 @@ DOM.companyName.addEventListener("input", (e) => {
   addOptionToCompanyShippingAddress(companyIdValue);
 });
 
+// when adding real database one of the best option to query shipping address directly by id
 DOM.shippingAddress.addEventListener("input", (e) => {
   const shippingAddressValue = e.target.value;
-   DOM.shippingMerchendiser.innerHTML = "";
-  addOptionToMerchandiser(shippingAddressValue);
+  const companyValue = document.getElementById("companyName").value;
+  DOM.shippingMerchendiser.innerHTML = "";
+  addOptionToMerchandiser(companyValue, shippingAddressValue);
 });
