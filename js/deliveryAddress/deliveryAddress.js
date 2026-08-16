@@ -8,11 +8,16 @@ const DOM = {
 };
 
 const companyDetails = await getCompanyDetails();
-console.log(companyDetails);
+
 function searchCompanyById(id) {
   return companyDetails.filter((company) => {
     return company.id === id;
   });
+}
+function searchShippingByCompanyId(id) {
+  return companyDetails.filter((company) => {
+    return company.id === id;
+  })[0];
 }
 
 const addOptionToCompanyName = () => {
@@ -24,26 +29,42 @@ const addOptionToCompanyName = () => {
     element.appendChild(option);
   });
 };
-
 addOptionToCompanyName();
 
-const addOptionToCompanyShippingAddress = () => {
+const addOptionToCompanyShippingAddress = (idToFindShippingAddress) => {
   const element = DOM.shippingAddress;
-  companyDetails.shippingAddress.forEach((address) => {
+  const shippingAddresses = searchShippingByCompanyId(
+    idToFindShippingAddress,
+  ).shippingDetails;
+  element.innerHTML = `<option value="" selected disabled hidden>Select Option</option>`;
+  shippingAddresses.forEach((shippingCAddress) => {
     const option = document.createElement("option");
-    option.value = address;
-    option.textContent = company.name;
+    option.value = shippingCAddress.id;
+    option.textContent = shippingCAddress.address;
     element.appendChild(option);
   });
 };
 
-// addOptionToCompanyShippingAddress();
+const addOptionToMerchandier = (idToFindShippingAddress) => {
+  const element = DOM.shippingAddress;
+  const shippingAddresses = searchMerchByShippingAddressId(
+    idToFindShippingAddress,
+  ).shippingDetails;
+  element.innerHTML = `<option value="" selected disabled hidden>Select Option</option>`;
+  shippingAddresses.forEach((shippingCAddress) => {
+    const option = document.createElement("option");
+    option.value = shippingCAddress.id;
+    option.textContent = shippingCAddress.address;
+    element.appendChild(option);
+  });
+};
 
 DOM.companyName.addEventListener("input", (e) => {
   const companyIdValue = e.target.value;
-  const data = searchCompanyById(companyIdValue)[0];
-  console.log(data);
-  DOM.shippingAddress.value = data.address;
-  DOM.shippingMerchendiser.value = data.merchandiser;
-  DOM.shippingContact.value = data.contact;
+  DOM.shippingAddress.innerHTML = "";
+  addOptionToCompanyShippingAddress(companyIdValue);
+});
+
+DOM.shippingAddress.addEventListener("input", (e)=>{
+
 });

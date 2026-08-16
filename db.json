@@ -38,6 +38,7 @@
   ],
   "company-sections": [
     {
+      "id": "w-apparels",
       "name": "w-apparels",
       "shippingDetails": [
         {
@@ -88,10 +89,10 @@
             }
           ]
         }
-      ],
-      "id": "TGmS22HtAno"
+      ]
     },
     {
+      "id": "3na",
       "name": "3NA",
       "shippingDetails": [
         {
@@ -126,10 +127,10 @@
             }
           ]
         }
-      ],
-      "id": "2Aunk1GpHsU"
+      ]
     },
     {
+      "id": "quality-apparels",
       "name": "Quality Apparels",
       "shippingDetails": [
         {
@@ -164,8 +165,7 @@
             }
           ]
         }
-      ],
-      "id": "8brIZ15rmLE"
+      ]
     }
   ]
 }
