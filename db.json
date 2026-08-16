@@ -41,39 +41,48 @@
       "name": "w-apparels",
       "shippingDetails": [
         {
+          "id": "WA-ADDR-001",
           "address": "Unit-1/Rayer Bazar, Dhaka",
           "merchandiser": [
             {
+              "id": "WA-MERCH-001",
               "name": "ratul",
               "contact": "01799668506"
             },
             {
+              "id": "WA-MERCH-002",
               "name": "tanvir",
               "contact": "01688112233"
             }
           ]
         },
         {
+          "id": "WA-ADDR-002",
           "address": "Rayer Bazar Unit 3",
           "merchandiser": [
             {
+              "id": "WA-MERCH-001",
               "name": "ratul",
               "contact": "01799668506"
             },
             {
+              "id": "WA-MERCH-002",
               "name": "tanvir",
               "contact": "01688112233"
             }
           ]
         },
         {
+          "id": "WA-ADDR-003",
           "address": "Plot-45, Tejgaon Industrial Area, Dhaka",
           "merchandiser": [
             {
+              "id": "WA-MERCH-001",
               "name": "ratul",
               "contact": "01799668506"
             },
             {
+              "id": "WA-MERCH-002",
               "name": "tanvir",
               "contact": "01688112233"
             }
@@ -86,26 +95,32 @@
       "name": "3NA",
       "shippingDetails": [
         {
+          "id": "3NA-ADDR-001",
           "address": "Unit-10/Rayer Bazar, Dhaka",
           "merchandiser": [
             {
+              "id": "3NA-MERCH-001",
               "name": "fahim",
               "contact": "01822334455"
             },
             {
+              "id": "3NA-MERCH-002",
               "name": "arif",
               "contact": "01555667788"
             }
           ]
         },
         {
+          "id": "3NA-ADDR-002",
           "address": "Mirpur Sector 11, Block-C, Dhaka",
           "merchandiser": [
             {
+              "id": "3NA-MERCH-001",
               "name": "fahim",
               "contact": "01822334455"
             },
             {
+              "id": "3NA-MERCH-002",
               "name": "arif",
               "contact": "01555667788"
             }
@@ -118,26 +133,32 @@
       "name": "Quality Apparels",
       "shippingDetails": [
         {
+          "id": "QA-ADDR-001",
           "address": "Narayanganj, Dhaka",
           "merchandiser": [
             {
+              "id": "QA-MERCH-001",
               "name": "sultana",
               "contact": "01911223344"
             },
             {
+              "id": "QA-MERCH-002",
               "name": "kamal",
               "contact": "01300445566"
             }
           ]
         },
         {
+          "id": "QA-ADDR-002",
           "address": "BSCIC Industrial Estate, Konabari, Gazipur",
           "merchandiser": [
             {
+              "id": "QA-MERCH-001",
               "name": "sultana",
               "contact": "01911223344"
             },
             {
+              "id": "QA-MERCH-002",
               "name": "kamal",
               "contact": "01300445566"
             }
