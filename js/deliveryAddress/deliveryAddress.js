@@ -1,4 +1,5 @@
 import { getCompanyDetails } from "../fetchData/main.js";
+const valueInitWithLocalStorage = localStorage.getItem("companyMerch");
 
 const DOM = {
   companyName: document.getElementById("companyName"),
@@ -6,9 +7,13 @@ const DOM = {
   shippingMerchendiser: document.getElementById("shippingMerchendiser"),
   shippingContact: document.getElementById("shippingContact"),
 };
+if (valueInitWithLocalStorage) {
+  DOM.shippingContact.value = valueInitWithLocalStorage;
+}
 
 const companyDetails = await getCompanyDetails();
 
+// searching starts
 function searchCompanyById(id) {
   return companyDetails.filter((company) => {
     return company.id === id;
@@ -25,8 +30,10 @@ function searchMerchByShippingAddressId(id) {
     return company.id === id;
   })[0];
 }
-console.log(searchMerchByShippingAddressId("3NA-ADDR-001"));
+// searching ends
 
+
+// populator starts
 const addOptionToCompanyName = () => {
   const element = DOM.companyName;
   companyDetails.forEach((company) => {
@@ -56,8 +63,6 @@ const addOptionToMerchandiser = (idToFindAddresses, idToFindMerch) => {
   const element = DOM.shippingMerchendiser;
   const addresses =
     searchShippingByCompanyId(idToFindAddresses).shippingDetails;
-  console.log("addOptionToMerchandiser:", addresses[0].merchandiser);
-  console.log("idToFindMerch", idToFindMerch);
   const merchandisers = addresses.filter(
     (address) => address.id === idToFindMerch,
   )[0].merchandiser;
@@ -70,7 +75,9 @@ const addOptionToMerchandiser = (idToFindAddresses, idToFindMerch) => {
     element.appendChild(option);
   });
 };
+// populator ends
 
+// event listeners starts
 DOM.companyName.addEventListener("input", (e) => {
   const companyIdValue = e.target.value;
   DOM.shippingAddress.innerHTML = "";
@@ -83,4 +90,10 @@ DOM.shippingAddress.addEventListener("input", (e) => {
   const companyValue = document.getElementById("companyName").value;
   DOM.shippingMerchendiser.innerHTML = "";
   addOptionToMerchandiser(companyValue, shippingAddressValue);
+  fillNumberToContact();
 });
+
+DOM.shippingContact.addEventListener("input", (e) => {
+  const saved = localStorage.setItem("companyMerch", e.target.value);
+});
+// event listeners ends
